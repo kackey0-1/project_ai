@@ -1,1 +1,1 @@
-web: gunicorn --config src/settings.py
+web: gunicorn --config ./src/settings.py
