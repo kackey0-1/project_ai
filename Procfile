@@ -1,1 +1,1 @@
-web: gunicorn --config ./src/settings.py
+web: cd src && python main.py

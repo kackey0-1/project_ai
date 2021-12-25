@@ -51,5 +51,5 @@ def upload_file():
 
 
 if __name__ == "__main__":
-    os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
-    app.run(host="0.0.0.0")
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
