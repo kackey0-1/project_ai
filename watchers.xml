@@ -1,18 +1,18 @@
 <TaskOptions>
   <TaskOptions>
-    <option name="arguments" value="$PROJECT_DIR$/" />
-    <option name="checkSyntaxErrors" value="true" />
+    <option name="arguments" value="$FilePath$" />
+    <option name="checkSyntaxErrors" value="false" />
     <option name="description" />
     <option name="exitCodeBehavior" value="ERROR" />
-    <option name="fileExtension" value="UNKNOWN" />
-    <option name="immediateSync" value="true" />
+    <option name="fileExtension" value="py" />
+    <option name="immediateSync" value="false" />
     <option name="name" value="black" />
-    <option name="output" value="$PROJECT_DIR$/" />
+    <option name="output" value="$ProjectFileDir$" />
     <option name="outputFilters">
       <array />
     </option>
     <option name="outputFromStdout" value="false" />
-    <option name="program" value="$PROJECT_DIR$/.venv/lib/python3.8/site-packages/black" />
+    <option name="program" value="$PyInterpreterDirectory$/black" />
     <option name="runOnExternalChanges" value="true" />
     <option name="scopeName" value="Project Files" />
     <option name="trackOnlyRoot" value="false" />
@@ -21,20 +21,20 @@
   </TaskOptions>
   <TaskOptions>
     <option name="arguments" value="--rcfile $ContentRoot$/.pylintrc $FilePath$" />
-    <option name="checkSyntaxErrors" value="true" />
+    <option name="checkSyntaxErrors" value="false" />
     <option name="description" />
     <option name="exitCodeBehavior" value="ERROR" />
-    <option name="fileExtension" value="UNKNOWN" />
-    <option name="immediateSync" value="true" />
+    <option name="fileExtension" value="py" />
+    <option name="immediateSync" value="false" />
     <option name="name" value="pylint" />
-    <option name="output" value="$PROJECT_DIR$/" />
+    <option name="output" value="$FilePath$" />
     <option name="outputFilters">
       <array />
     </option>
     <option name="outputFromStdout" value="false" />
-    <option name="program" value="$PROJECT_DIR$/.venv/lib/python3.8/site-packages/pylint" />
+    <option name="program" value="$PyInterpreterDirectory$/pylint" />
     <option name="runOnExternalChanges" value="true" />
-    <option name="scopeName" value="All Places" />
+    <option name="scopeName" value="Project Files" />
     <option name="trackOnlyRoot" value="false" />
     <option name="workingDir" value="" />
     <envs />
