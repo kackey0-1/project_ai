@@ -7,5 +7,5 @@
 heroku git:remote -a project-ai-v0
 git add .
 git commit -am "make it better"
-git push heroku master
+git push heroku main 
 ```
