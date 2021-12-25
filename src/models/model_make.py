@@ -76,5 +76,5 @@ model.summary()
 #     os.mkdir(result_dir)
 # 重みを保存
 # model.save(os.path.join(result_dir, 'model.h5'))
-model.save("./model.h5")
+model.save("/model.h5")
 # files.download('/content/results/model.h5')

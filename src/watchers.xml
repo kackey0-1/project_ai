@@ -5,7 +5,7 @@
     <option name="description" />
     <option name="exitCodeBehavior" value="ERROR" />
     <option name="fileExtension" value="py" />
-    <option name="immediateSync" value="true" />
+    <option name="immediateSync" value="false" />
     <option name="name" value="black" />
     <option name="output" value="$ProjectFileDir$" />
     <option name="outputFilters">
@@ -25,7 +25,7 @@
     <option name="description" />
     <option name="exitCodeBehavior" value="ERROR" />
     <option name="fileExtension" value="py" />
-    <option name="immediateSync" value="true" />
+    <option name="immediateSync" value="false" />
     <option name="name" value="pylint" />
     <option name="output" value="$FilePath$" />
     <option name="outputFilters">

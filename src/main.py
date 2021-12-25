@@ -12,6 +12,7 @@ UPLOAD_FOLDER = "uploads"
 ALLOWED_EXTENSIONS = set(["png", "jpg", "jpeg", "gif"])
 # 学習済みモデルをロード
 model = load_model("./models/model.h5")
+# app = Flask(__name__, static_folder="../ui/dist/static", template_folder="../ui/dist")
 app = Flask(__name__)
 
 
@@ -50,4 +51,5 @@ def upload_file():
 
 
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 8080))
+    app.run(host="0.0.0.0", port=port)
