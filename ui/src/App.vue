@@ -1,33 +1,28 @@
 <template>
   <div id="app">
-    <el-menu :default-active="activeIndex" mode="horizontal" router>
-      <el-menu-item index="home" :route="{ name:'home' }">Home</el-menu-item>
-      <el-menu-item>
-        <a href="https://element.eleme.io" target="_blank">Link</a>
-      </el-menu-item>
-    </el-menu>
-    <router-view />
+    <img alt="Vue logo" src="./assets/logo.png">
+    <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
+import HelloWorld from './components/HelloWorld.vue'
+
 export default {
-  name: 'app',
-  data () {
-    return {
-      activeIndex: this.$route.name
-    }
+  name: 'App',
+  components: {
+    HelloWorld
   }
 }
 </script>
 
-<style scoped>
+<style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-a {
-  text-decoration: none;
+  margin-top: 60px;
 }
 </style>
