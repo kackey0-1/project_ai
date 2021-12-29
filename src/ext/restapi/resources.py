@@ -1,7 +1,7 @@
 import os
 
 import werkzeug
-from flask import abort, jsonify
+from flask import jsonify
 from flask_restful import Resource, reqparse
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
@@ -24,9 +24,6 @@ class ImageAiResource(Resource):
     def post(self):
         """
         Creates a new product.
-
-        Only admin user authenticated using basic auth can post
-        Basic takes base64 encripted username:password.
 
         # curl -XPOST localhost:5000/api/v1/product/ \
         #  -H "Authorization: Basic Y2h1Y2s6bm9ycmlz" \
@@ -53,7 +50,7 @@ class ImageAiResource(Resource):
             # 変換したデータをモデルに渡して予測
             result = model.predict(data)[0]
             predicted = result.argmax()
-            predict_answer = "これは " + classes[predicted] + " です"
+            predict_answer = classes[predicted]
             os.remove(os.path.join(UPLOAD_FOLDER, filename))
             return jsonify({"answer": predict_answer})
 

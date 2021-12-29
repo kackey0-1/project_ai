@@ -2,7 +2,7 @@
   <v-container fluid style="width: 600px">
     <div class="mb-5">
       <h1>数値判別AI</h1>
-      <h2>Vuetify Image Upload with Preview</h2>
+      <h2>{{answer}}</h2>
     </div>
 
     <div>
@@ -68,25 +68,24 @@ export default {
     return {
       currentImage: undefined,
       previewImage: undefined,
-
       progress: 0,
       message: "",
-
-      imageInfos: []
+      imageInfos: [],
+      answer: "数値画像を識別します。",
     };
   },
   methods: {
-    upload(file) {
+    upload() {
       let formData = new FormData();
 
-      formData.append("file", file);
-
-      axios.post("http://192.168.1.3:8000/upload", formData, {
+      formData.append("file", this.currentImage)
+      axios.post("http://127.0.0.1:5000/api/v1/upload/", formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
       }).then(res => {
-        console.log(res)
+        console.log(res.data)
+        this.answer = `これは、${res.data.answer} です。`
       });
     },
     getFiles() {

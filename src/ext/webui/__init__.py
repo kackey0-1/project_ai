@@ -5,8 +5,6 @@ from .views import index
 bp = Blueprint(
     "webui",
     __name__,
-    # static_folder="../../templates/static",
-    # template_folder="../../templates",
 )
 bp.add_url_rule("/", view_func=index)
 

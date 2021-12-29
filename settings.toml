@@ -34,6 +34,8 @@ DEBUG_TB_PANELS = [
     "flask_debugtoolbar.panels.profiler.ProfilerDebugPanel",
     "flask_debugtoolbar.panels.config_vars.ConfigVarsDebugPanel"
 ]
+CORS_ALLOW_HEADERS = "*"
+
 
 [testing]
 SQLALCHEMY_DATABASE_URI = 'sqlite:///testing.db'
