@@ -1,7 +1,4 @@
 # ui
-Node.js: v16.6.1
-NPM: 7.20.5
-Vue: 3
 
 ## Project setup
 ```
