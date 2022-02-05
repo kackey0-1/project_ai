@@ -79,7 +79,8 @@ export default {
       let formData = new FormData();
 
       formData.append("file", this.currentImage)
-      axios.post("http://127.0.0.1:5000/api/v1/upload/", formData, {
+      // Request URL: http://localhost:8080/undefined/api/v1/upload/
+      axios.post(`${process.env.VUE_APP_API_URL}/api/v1/upload/`, formData, {
         headers: {
           "Content-Type": "multipart/form-data"
         }
