@@ -14,9 +14,7 @@ class Status(str, enum.Enum):
 class Sentence(db.Model, SerializerMixin):
     sentence_id_seq = Sequence("sentence_id_seq")
     id = db.Column(
-        db.BigInteger,
-        sentence_id_seq,
-        server_default=sentence_id_seq.next_value(),
+        db.String(36),
         primary_key=True,
     )
     status = db.Column(db.Enum(Status), nullable=False, default=Status.QUEUED)

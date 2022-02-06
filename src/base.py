@@ -1,3 +1,4 @@
+from celery import Celery
 from dynaconf import FlaskDynaconf
 from flask import Flask
 
@@ -10,6 +11,23 @@ def create_app(**config):
     app.config.load_extensions("EXTENSIONS")  # Load extensions from settings.toml
     app.config.update(config)  # Override with passed config
     return app
+
+
+def create_celery_app():
+    """
+    https://docs.celeryproject.org/en/master/userguide/extending.html
+    :param app:
+    :return:
+    """
+    celery = Celery(
+        # app.name,
+        # backend=app.config["CELERY_RESULT_BACKEND"],
+        # broker=app.config["CELERY_BROKER_URL"],
+        backend="redis://localhost:6379",
+        broker="redis://localhost:6379",
+    )
+    # celery.conf.update(app.config)
+    return celery
 
 
 def create_app_wsgi():

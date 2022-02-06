@@ -1,12 +1,19 @@
 version: '3'
 
 services:
-  mysql:
-    image: mysql:5.7.12
+  postgresql:
+    image: postgres:13.4
+    container_name: postgresql
     ports:
-      - 3306:3306
+      - 5432:5432
+    volumes:
+      - ./postgres/init:/docker-entrypoint-initdb.d
     environment:
-      MYSQL_DATABASE: project_ai
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_USER: projectai
-      MYSQL_PASSWORD: projectai
+      POSTGRES_DB: project_ai
+      POSTGRES_USER: projectai
+      POSTGRES_PASSWORD: projectai
+
+  redis:
+    image: redis:latest
+    ports:
+      - 6379:6379

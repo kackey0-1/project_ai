@@ -37,6 +37,7 @@ Werkzeug==2.0.0
 flask-sqlalchemy
 sqlalchemy-serializer
 sqlalchemy
-mysqlclient
-mysql-connector-python
-flask-mysqldb
+psycopg2
+celery
+Redis
+kombu
