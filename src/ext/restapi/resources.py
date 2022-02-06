@@ -10,10 +10,9 @@ from werkzeug.utils import secure_filename
 
 classes = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 image_size = 28
-UPLOAD_FOLDER = "uploads"
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
 # 学習済みモデルをロード
-model = load_model("./src/models/model.h5")
+model = load_model("./src/ml_models/model.h5")
 
 
 def allowed_file(filename):
@@ -39,8 +38,8 @@ class ImageAiResource(Resource):
             raise InvalidAPIUsage("file not found")
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            file.save(os.path.join(UPLOAD_FOLDER, filename))
-            filepath = os.path.join(UPLOAD_FOLDER, filename)
+            file.save(filename)
+            filepath = filename
             img = image.load_img(
                 filepath, color_mode="grayscale", target_size=(image_size, image_size)
             )
@@ -51,7 +50,7 @@ class ImageAiResource(Resource):
             result = model.predict(data)[0]
             predicted = result.argmax()
             predict_answer = classes[predicted]
-            os.remove(os.path.join(UPLOAD_FOLDER, filename))
+            os.remove(filename)
             return jsonify({"answer": predict_answer})
 
 

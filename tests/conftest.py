@@ -1,9 +1,9 @@
 import sys
 import pytest
 
-from ai_flask_project import create_app
-from ai_flask_project.ext.commands import populate_db
-from ai_flask_project.ext.database import db
+from src import create_app
+from src.ext.commands import populate_db
+from src.ext.database import db
 
 
 @pytest.fixture(scope="session")
