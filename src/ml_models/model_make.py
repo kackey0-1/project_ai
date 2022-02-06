@@ -1,7 +1,7 @@
 from keras.datasets import mnist
 from keras.layers import Dense, Dropout, Flatten, Activation
 from keras.layers import Conv2D, MaxPooling2D
-from keras.models import Sequential, load_model
+from keras.models import Sequential
 from keras.utils.np_utils import to_categorical
 
 # from keras.utils.vis_utils import plot_model

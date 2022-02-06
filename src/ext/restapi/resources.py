@@ -12,7 +12,7 @@ classes = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
 image_size = 28
 ALLOWED_EXTENSIONS = {"png", "jpg", "jpeg", "gif"}
 # 学習済みモデルをロード
-model = load_model("./src/models/model.h5")
+model = load_model("./src/ml_models/model.h5")
 
 
 def allowed_file(filename):

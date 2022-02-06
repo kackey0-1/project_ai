@@ -2,13 +2,16 @@
 DEBUG = false
 FLASK_ADMIN_TEMPLATE_MODE = "bootstrap3"
 FLASK_ADMIN_SWATCH = 'cerulean'
-SQLALCHEMY_DATABASE_URI = 'sqlite:///development.db'
+SQLALCHEMY_DATABASE_URI = "mysql://projectai:projectai@127.0.0.1/project_ai"
+SQLALCHEMY_TRACK_MODIFICATIONS = "True"
 TITLE = "project_ai"
 SECRET_KEY = "Pl3453Ch4ng3"
 PASSWORD_SCHEMES = ['pbkdf2_sha512', 'md5_crypt']
 EXTENSIONS = [
     "src.ext.webui:init_app",
     "src.ext.restapi:init_app",
+    "src.ext.database:init_app",
+    "src.ext.commands:init_app",
 ]
 
 [development]
@@ -38,7 +41,7 @@ CORS_ALLOW_HEADERS = "*"
 
 
 [testing]
-SQLALCHEMY_DATABASE_URI = 'sqlite:///testing.db'
+SQLALCHEMY_DATABASE_URI = "postgresql://root:root@127.0.0.1/project_ai"
 
 [production]
 SQLALCHEMY_DATABASE_URI = 'sqlite:///production.db'

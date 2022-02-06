@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import About from '../views/About.vue'
-import Ai from '../views/Ai.vue'
+import Vision from '../views/Vision.vue'
 
 Vue.use(VueRouter)
 
@@ -18,9 +18,9 @@ const routes = [
     component: About,
   },
   {
-    path: '/ai',
-    name: 'Ai',
-    component: Ai,
+    path: '/vison',
+    name: 'Vision',
+    component: Vision,
   }
 ]
 
