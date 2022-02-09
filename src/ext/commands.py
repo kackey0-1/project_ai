@@ -1,7 +1,7 @@
 import click
 
 # from src.ext.auth import create_user
-from src.ext.database import db
+from src import db
 from src.models import Sentence, Status
 import uuid
 

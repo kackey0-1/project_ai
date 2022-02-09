@@ -2,15 +2,19 @@
 DEBUG = false
 FLASK_ADMIN_TEMPLATE_MODE = "bootstrap3"
 FLASK_ADMIN_SWATCH = 'cerulean'
-SQLALCHEMY_DATABASE_URI = "mysql://projectai:projectai@127.0.0.1/project_ai"
+SQLALCHEMY_DATABASE_URI = 'sqlite:///../development.db'
 SQLALCHEMY_TRACK_MODIFICATIONS = "True"
+BROKER_HOST = "localhost"
+BROKER_PORT = 6379
+CELERY_REDIS_USE_SSL = "False"
+CELERY_RESULT_BACKEND = "redis://localhost:6379"
+CELERY_BROKER_URL = "redis://localhost:6379"
 TITLE = "project_ai"
 SECRET_KEY = "Pl3453Ch4ng3"
 PASSWORD_SCHEMES = ['pbkdf2_sha512', 'md5_crypt']
 EXTENSIONS = [
     "src.ext.webui:init_app",
     "src.ext.restapi:init_app",
-    "src.ext.database:init_app",
     "src.ext.commands:init_app",
 ]
 

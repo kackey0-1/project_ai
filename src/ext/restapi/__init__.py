@@ -11,5 +11,5 @@ api = Api(bp)
 def init_app(app):
     api.add_resource(ImageAiResource, "/upload/")
     api.add_resource(SentenceResource, "/sentence/")
-    api.add_resource(SentenceItemResource, "/sentence/<int:id>")
+    api.add_resource(SentenceItemResource, "/sentence/<string:id>")
     app.register_blueprint(bp)

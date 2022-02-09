@@ -1,5 +1,14 @@
 # ui
 
+## Version Info
+```bash
+npm -v
+7.20.5
+
+node -v
+v16.6.1
+```
+
 ## Project setup
 ```
 npm install

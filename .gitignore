@@ -130,3 +130,12 @@ dmypy.json
 # Pyre type checker
 .pyre/
 src/uploads/**
+
+# Terraform Resources
+.terraform
+*.hcl
+*.tfvars
+*.backup
+*.tfstate
+*.info
+

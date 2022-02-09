@@ -1,0 +1,17 @@
+{
+    "epoch": 3.0,
+    "eval_loss": 2.6959705352783203,
+    "eval_mem_cpu_alloc_delta": 38411,
+    "eval_mem_cpu_peaked_delta": 78195,
+    "eval_runtime": 28.7718,
+    "eval_samples": 14,
+    "eval_samples_per_second": 0.487,
+    "init_mem_cpu_alloc_delta": 1635620,
+    "init_mem_cpu_peaked_delta": 18537,
+    "perplexity": 14.819895006753741,
+    "train_mem_cpu_alloc_delta": 460581,
+    "train_mem_cpu_peaked_delta": 150777,
+    "train_runtime": 394.8494,
+    "train_samples": 14,
+    "train_samples_per_second": 0.106
+}

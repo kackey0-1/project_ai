@@ -1,14 +1,15 @@
 from flask import abort, jsonify, request
 from flask_restful import Resource
-
 from src.models import Sentence
-from src.ext.database import db
+from src import db
+from uuid import uuid4
+from src import tasks
 
 
 class SentenceResource(Resource):
     def get(self):
         sentences = Sentence.query.all() or abort(204)
-        return jsonify({"sentences": [sentences.to_dict() for sentence in sentences]})
+        return jsonify({"sentences": [sentence.to_dict() for sentence in sentences]})
 
     def post(self):
         """
@@ -19,13 +20,16 @@ class SentenceResource(Resource):
         #  -H "Content-Type: application/json"
         """
         json = request.get_json(force=True)
-        sentence = Sentence(input=json.get("input"))
+        input_uiid = str(uuid4())
+        sentence = Sentence(id=input_uiid, input=json.get("input"))
         db.session.add(sentence)
         db.session.commit()
-        return jsonify(sentence.to_dict()), 201
+        tasks.handle_message.delay(input_uiid)
+        return jsonify(sentence.to_dict())
 
 
 class SentenceItemResource(Resource):
     def get(self, id):
         sentence = Sentence.query.filter_by(id=id).first() or abort(404)
         return jsonify(sentence.to_dict())
+
