@@ -37,7 +37,7 @@ Werkzeug==2.0.0
 flask-sqlalchemy
 sqlalchemy-serializer
 sqlalchemy
-celery
+celery==5.2.3
 Redis
 transformers==4.4.2
 datasets==1.18.2
