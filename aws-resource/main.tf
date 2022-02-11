@@ -135,6 +135,6 @@ resource "aws_instance" "project_ai_instance" {
 output "ec2_ssh" {
   description = "ec2 ssh"
   value = {
-    "ec2_ssh": "ssh -i ~/${local.private_key_path} ubuntu@${aws_instance.project_ai_instance.public_ip}"
+    "ec2_ssh": "ssh -i ${local.private_key_path} ubuntu@${aws_instance.project_ai_instance.public_ip}"
   }
 }

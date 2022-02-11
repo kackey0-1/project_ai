@@ -5,8 +5,8 @@ from transformers import T5Tokenizer, AutoModelForCausalLM
 
 celery = celeryapp.celery
 # set tokenizer and model
-tokenizer = T5Tokenizer.from_pretrained("./japanese-gpt2-medium")
-model = AutoModelForCausalLM.from_pretrained("./japanese-gpt2-medium")
+tokenizer = T5Tokenizer.from_pretrained("rinna/japanese-gpt2-medium")
+model = AutoModelForCausalLM.from_pretrained("rinna/japanese-gpt2-medium")
 
 
 @celery.task()
